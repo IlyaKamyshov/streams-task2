@@ -21,10 +21,7 @@ public class Main {
                 .filter(x -> x.getAge() < 18)
                 .count();
 
-        System.out.println();
-        System.out.println("Количество несовершеннолетних: " + countUnder18);
-        System.out.println();
-        System.out.println();
+        System.out.println("\n" + "Количество несовершеннолетних: " + countUnder18 + "\n\n");
 
         List<String> toArmyNow = persons.stream()
                 .filter(x -> x.getSex() == Sex.MAN)
@@ -34,8 +31,6 @@ public class Main {
 
         System.out.println("Список фамилий призывников:");
         toArmyNow.forEach(System.out::println);
-        System.out.println();
-        System.out.println();
 
         List<Person> highSchooledWorkers = persons.stream()
                 .filter(x -> x.getEducation() == Education.HIGHER)
@@ -44,7 +39,7 @@ public class Main {
                 .sorted(Comparator.comparing(Person::getFamily))
                 .toList();
 
-        System.out.println("Список работоспособных людей с высшим образованием:");
+        System.out.println("\n\n" + "Список работоспособных людей с высшим образованием:");
         highSchooledWorkers.forEach(System.out::println);
 
     }
